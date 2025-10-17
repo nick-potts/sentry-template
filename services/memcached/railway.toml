@@ -1,6 +1,6 @@
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+dockerfilePath = "./services/memcached/Dockerfile"
 
 [deploy]
 restartPolicyType = "ALWAYS"

@@ -1,6 +1,6 @@
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+dockerfilePath = "./services/web/Dockerfile"
 context = "../.."
 
 [deploy]

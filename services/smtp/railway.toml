@@ -1,6 +1,6 @@
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+dockerfilePath = "./services/smtp/Dockerfile"
 
 [deploy]
 restartPolicyType = "ALWAYS"
