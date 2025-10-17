@@ -1,7 +1,0 @@
-[build]
-builder = "DOCKERFILE"
-dockerfilePath = "./services/smtp/Dockerfile"
-
-[deploy]
-restartPolicyType = "ALWAYS"
-restartPolicyMaxRetries = 10

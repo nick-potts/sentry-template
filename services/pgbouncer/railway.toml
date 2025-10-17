@@ -1,7 +1,0 @@
-[build]
-builder = "DOCKERFILE"
-dockerfilePath = "./services/pgbouncer/Dockerfile"
-
-[deploy]
-restartPolicyType = "ALWAYS"
-restartPolicyMaxRetries = 10
