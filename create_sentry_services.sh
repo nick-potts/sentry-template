@@ -23,9 +23,9 @@ EOF
 cat > services/web/Dockerfile << 'EOF'
 FROM ghcr.io/getsentry/sentry:nightly
 
-COPY --from=shared /shared/sentry /etc/sentry
-COPY --from=shared /shared/geoip /geoip
-COPY --from=shared /shared/certificates /usr/local/share/ca-certificates
+COPY shared/sentry /etc/sentry
+COPY shared/geoip /geoip
+COPY shared/certificates /usr/local/share/ca-certificates
 
 ENV PYTHONUSERBASE=/data/custom-packages
 ENV SENTRY_CONF=/etc/sentry
@@ -59,9 +59,9 @@ EOF
 cat > services/events-consumer/Dockerfile << 'EOF'
 FROM ghcr.io/getsentry/sentry:nightly
 
-COPY --from=shared /shared/sentry /etc/sentry
-COPY --from=shared /shared/geoip /geoip
-COPY --from=shared /shared/certificates /usr/local/share/ca-certificates
+COPY shared/sentry /etc/sentry
+COPY shared/geoip /geoip
+COPY shared/certificates /usr/local/share/ca-certificates
 
 ENV PYTHONUSERBASE=/data/custom-packages
 ENV SENTRY_CONF=/etc/sentry
@@ -93,9 +93,9 @@ EOF
 cat > services/attachments-consumer/Dockerfile << 'EOF'
 FROM ghcr.io/getsentry/sentry:nightly
 
-COPY --from=shared /shared/sentry /etc/sentry
-COPY --from=shared /shared/geoip /geoip
-COPY --from=shared /shared/certificates /usr/local/share/ca-certificates
+COPY shared/sentry /etc/sentry
+COPY shared/geoip /geoip
+COPY shared/certificates /usr/local/share/ca-certificates
 
 ENV PYTHONUSERBASE=/data/custom-packages
 ENV SENTRY_CONF=/etc/sentry
@@ -127,9 +127,9 @@ EOF
 cat > services/post-process-forwarder-errors/Dockerfile << 'EOF'
 FROM ghcr.io/getsentry/sentry:nightly
 
-COPY --from=shared /shared/sentry /etc/sentry
-COPY --from=shared /shared/geoip /geoip
-COPY --from=shared /shared/certificates /usr/local/share/ca-certificates
+COPY shared/sentry /etc/sentry
+COPY shared/geoip /geoip
+COPY shared/certificates /usr/local/share/ca-certificates
 
 ENV PYTHONUSERBASE=/data/custom-packages
 ENV SENTRY_CONF=/etc/sentry

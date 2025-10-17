@@ -1,0 +1,15 @@
+FROM ghcr.io/getsentry/sentry:nightly
+
+COPY sentry /etc/sentry
+COPY geoip /geoip
+COPY certificates /usr/local/share/ca-certificates
+
+ENV PYTHONUSERBASE=/data/custom-packages
+ENV SENTRY_CONF=/etc/sentry
+ENV DEFAULT_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+ENV REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+ENV GRPC_DEFAULT_SSL_ROOTS_FILE_PATH_ENV_VAR=/etc/ssl/certs/ca-certificates.crt
+
+RUN update-ca-certificates
+
+ENTRYPOINT ["/etc/sentry/entrypoint.sh"]

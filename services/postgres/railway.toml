@@ -1,2 +1,8 @@
 [build]
 builder = "DOCKERFILE"
+dockerfilePath = "./services/postgres/Dockerfile"
+
+[deploy]
+startCommand = "postgres"
+restartPolicyType = "ALWAYS"
+restartPolicyMaxRetries = 10
